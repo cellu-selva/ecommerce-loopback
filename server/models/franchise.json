@@ -1,0 +1,37 @@
+{
+  "name": "franchise",
+  "plural": "franchise",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "storeName": {
+      "type": "string",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "owner": {
+      "type": "hasOne",
+      "model": "user",
+      "foreignKey": "owner",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

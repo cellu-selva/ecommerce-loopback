@@ -1,0 +1,28 @@
+{
+  "name": "varientMeta",
+  "plural": "varients",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

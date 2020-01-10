@@ -1,0 +1,80 @@
+{
+  "name": "address",
+  "plural": "address",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "doorNo": {
+      "type": "string",
+      "required": true
+    },
+    "streetName": {
+      "type": "string",
+      "required": true
+    },
+    "landmark": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "pincode": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "phoneExt": {
+      "type": "string",
+      "required": true
+    },
+    "isDefault": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "geolocation": {
+      "type": "geopoint"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "user",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

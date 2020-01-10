@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "user": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "address": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "franchise": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "category": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "product": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "productMeta": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "varientMeta": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "stockSummary": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "stock": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "couponMeta": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "cartItem": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "order": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "transaction": {
+    "dataSource": "dbconnector",
+    "public": true
+  },
+  "wallet": {
+    "dataSource": "dbconnector",
+    "public": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "stock",
+  "plural": "stocks",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "quantity": {
+      "type": "number",
+      "required": true
+    },
+    "measuringUnit": {
+      "type": "string",
+      "required": true,
+      "default": "kiologram"
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "totalPrice": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "productMeta": {
+      "type": "hasAndBelongsToMany",
+      "model": "productMeta",
+      "foreignKey": "product",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

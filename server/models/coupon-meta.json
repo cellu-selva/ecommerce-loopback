@@ -1,0 +1,71 @@
+{
+  "name": "couponMeta",
+  "plural": "coupons",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "coupon": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "discountPercentage": {
+      "type": "number",
+      "required": true
+    },
+    "maxDiscount": {
+      "type": "number",
+      "required": true
+    },
+    "minPurchaseValue": {
+      "type": "number",
+      "required": true
+    },
+    "redeemSoFar": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "maxRedeem": {
+      "type": "number",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "expiryDate": {
+      "type": "date",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "belongsTo",
+      "model": "order",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

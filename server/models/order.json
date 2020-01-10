@@ -1,0 +1,69 @@
+{
+  "name": "order",
+  "plural": "orders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "totalPrice": {
+      "type": "number",
+      "required": true
+    },
+    "modeOfPurchace": {
+      "type": "string",
+      "required": true,
+      "default": "walk-in"
+    },
+    "additonalNote": {
+      "type": "string"
+    },
+    "modeOfPayment": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cartItems": {
+      "type": "hasAndBelongsToMany",
+      "model": "cartItem",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "couponMeta": {
+      "type": "hasOne",
+      "model": "couponMeta",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "transactions": {
+      "type": "hasAndBelongsToMany",
+      "model": "transaction",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

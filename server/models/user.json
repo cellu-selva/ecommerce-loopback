@@ -1,0 +1,68 @@
+{
+  "name": "user",
+  "plural": "users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "number",
+      "required": true
+    },
+    "phoneExt": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "hashType": {
+      "type": "string",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "addresses": {
+      "type": "hasAndBelongsToMany",
+      "model": "address",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "cartItems": {
+      "type": "hasAndBelongsToMany",
+      "model": "cartItem",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

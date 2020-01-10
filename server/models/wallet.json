@@ -1,0 +1,34 @@
+{
+  "name": "wallet",
+  "plural": "wallets",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "balance": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "currencyType": {
+      "type": "string",
+      "required": true,
+      "default": "rupee"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

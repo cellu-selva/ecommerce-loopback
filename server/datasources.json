@@ -1,0 +1,17 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "dbconnector": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "kadalunavu",
+    "password": "",
+    "name": "dbconnector",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}

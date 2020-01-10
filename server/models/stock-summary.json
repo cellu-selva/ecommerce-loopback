@@ -1,0 +1,42 @@
+{
+  "name": "stockSummary",
+  "plural": "stockSummary",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "balance": {
+      "type": "number",
+      "required": true
+    },
+    "measuringUnit": {
+      "type": "string",
+      "required": true,
+      "default": "kiologram"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "productMeta": {
+      "type": "hasOne",
+      "model": "productMeta",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

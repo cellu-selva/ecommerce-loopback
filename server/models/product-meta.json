@@ -1,0 +1,96 @@
+{
+  "name": "productMeta",
+  "plural": "productMeta",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string",
+      "required": true
+    },
+    "longDescription": {
+      "type": "string",
+      "required": true
+    },
+    "wastagePecentage": {
+      "type": "number",
+      "required": true
+    },
+    "actualPrice": {
+      "type": "number",
+      "required": true
+    },
+    "discountPrice": {
+      "type": "number",
+      "required": true
+    },
+    "logoUrl": {
+      "type": "string",
+      "required": true
+    },
+    "thumnail": {
+      "type": "string",
+      "required": true
+    },
+    "grossWeight": {
+      "type": "string",
+      "required": true
+    },
+    "netWeight": {
+      "type": "string",
+      "required": true
+    },
+    "customData": {
+      "type": "object"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "products": {
+      "type": "hasAndBelongsToMany",
+      "model": "product",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "stock": {
+      "type": "belongsTo",
+      "model": "stock",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "stockSummaries": {
+      "type": "hasOne",
+      "model": "stockSummary",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,45 @@
+{
+  "name": "transaction",
+  "plural": "transactions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "paymentId": {
+      "type": "string",
+      "required": true
+    },
+    "isSuccess": {
+      "type": "boolean",
+      "required": true
+    },
+    "transactionMeta": {
+      "type": "string",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "belongsTo",
+      "model": "order",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

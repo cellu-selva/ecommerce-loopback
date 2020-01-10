@@ -1,0 +1,57 @@
+{
+  "name": "category",
+  "plural": "categories",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string",
+      "required": true
+    },
+    "longDescription": {
+      "type": "string",
+      "required": true
+    },
+    "logoUrl": {
+      "type": "string",
+      "required": true
+    },
+    "thumnail": {
+      "type": "string",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "mixins": {
+      "type": {
+        "TimeStamp": true
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "productMeta": {
+      "type": "hasAndBelongsToMany",
+      "model": "productMeta",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
